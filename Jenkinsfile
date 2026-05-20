@@ -58,7 +58,7 @@ pipeline {
                 }
             }
         }
-
+/*
         stage('Update Manifest (GitOps)') {
             when { branch 'main' }
             steps {
@@ -85,6 +85,7 @@ pipeline {
                 }
             }
         }
+        */
     }
 
     post {
