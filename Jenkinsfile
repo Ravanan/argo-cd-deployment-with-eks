@@ -6,7 +6,7 @@ pipeline {
         GIT_BRANCH     = 'main'
 
         DOCKERHUB_USER = 'mailravan'
-        IMAGE_REPO     = 'demo'
+        IMAGE_REPO     = 'argo-cd-deployment-with-eks'
         IMAGE_NAME     = "${DOCKERHUB_USER}/${IMAGE_REPO}"
         IMAGE_TAG      = "${env.BUILD_NUMBER}-${env.GIT_COMMIT?.take(7) ?: 'local'}"
     }
