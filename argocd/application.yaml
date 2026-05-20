@@ -9,10 +9,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Ravanan/argo-cd-deployment-with-eks.git
-    targetRevision: main
+    targetRevision: feature/argocd-within-minikube
     path: k8s
   destination:
-    server: https://kubernetes.default.svc
+    server: https://31969E0B7C75652507863615975A512A.gr7.ap-southeast-2.eks.amazonaws.com
     namespace: demo
   syncPolicy:
     automated:

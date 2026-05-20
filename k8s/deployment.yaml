@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: demo
-          image: mailravan/demo:latest
+          image: mailravan/argo-cd-deployment-with-eks:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

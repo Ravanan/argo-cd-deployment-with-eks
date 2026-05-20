@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(kubectl config current-context)",
+      "PowerShell(kubectl config get-contexts)",
+      "PowerShell($pw = kubectl --context minikube -n argocd get secret argocd-initial-admin-secret -o jsonpath=\"{.data.password}\"; if \\($pw\\) { [System.Text.Encoding]::UTF8.GetString\\([System.Convert]::FromBase64String\\($pw\\)\\) } else { \"SECRET_NOT_FOUND - password may have been rotated or namespace missing\" })",
+      "PowerShell(argocd login localhost:8095 --username admin --password 'xzJq0s2Bzg42-QHG' --insecure --grpc-web)",
+      "PowerShell(argocd cluster add arn:aws:eks:ap-southeast-2:665206375138:cluster/peculiar-funk-crow --service-account argocd-manager --cluster-resources --yes)",
+      "PowerShell(argocd cluster add arn:aws:eks:ap-southeast-2:665206375138:cluster/peculiar-funk-crow --cluster-resources --yes)",
+      "PowerShell(argocd cluster list)"
+    ]
+  }
+}
