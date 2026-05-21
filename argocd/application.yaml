@@ -12,7 +12,7 @@ spec:
     targetRevision: feature/argocd-within-minikube
     path: k8s
   destination:
-    server: https://31969E0B7C75652507863615975A512A.gr7.ap-southeast-2.eks.amazonaws.com
+    server: https://9B993B8D3EFC45F9E25D4B662C01F759.gr7.ap-southeast-2.eks.amazonaws.com
     namespace: demo
   syncPolicy:
     automated:
