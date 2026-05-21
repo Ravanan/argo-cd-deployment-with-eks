@@ -20,7 +20,7 @@ spec:
           image: mailravan/argo-cd-deployment-with-eks:latest
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: 8082
               name: http
           resources:
             requests:
