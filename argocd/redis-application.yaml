@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: redis
+    targetRevision: 20.6.2   # pin a version
+    helm:
+      values: |
+        auth:
+          password: R@d1sP@$$w0rd
+        master:
+          persistence:
+            size: 4Gi
+        replica:
+          replicaCount: 2
+  destination:
+    server: https://9B993B8D3EFC45F9E25D4B662C01F759.gr7.ap-southeast-2.eks.amazonaws.com
+    namespace: redis
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
