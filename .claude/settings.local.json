@@ -7,7 +7,12 @@
       "PowerShell(argocd login localhost:8095 --username admin --password 'xzJq0s2Bzg42-QHG' --insecure --grpc-web)",
       "PowerShell(argocd cluster add arn:aws:eks:ap-southeast-2:665206375138:cluster/peculiar-funk-crow --service-account argocd-manager --cluster-resources --yes)",
       "PowerShell(argocd cluster add arn:aws:eks:ap-southeast-2:665206375138:cluster/peculiar-funk-crow --cluster-resources --yes)",
-      "PowerShell(argocd cluster list)"
+      "PowerShell(argocd cluster list)",
+      "Bash(aws eks *)",
+      "Bash(aws ec2 *)",
+      "Bash(kubectl get *)",
+      "Bash(kubectl config *)",
+      "Bash(kubectl --context minikube get application -n argocd demo -o jsonpath='{\"sync=\"}{.status.sync.status}{\" health=\"}{.status.health.status}{\" revision=\"}{.status.sync.revision}{\"\\\\n\"}{.status.operationState.message}{\"\\\\n\"}{.status.conditions}{\"\\\\n\"}')"
     ]
   }
 }

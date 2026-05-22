@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-remote *)",
+      "Bash(kubectl --context minikube -n argocd annotate application demo argocd.argoproj.io/refresh=hard --overwrite)",
+      "PowerShell($base = 'd:\\\\2026\\\\Development\\\\workspace\\\\argo-cd-deployment-with-eks\\\\src\\\\main\\\\java\\\\com\\\\example\\\\cartms'; New-Item -ItemType Directory -Force \"$base\\\\model\" | Out-Null; New-Item -ItemType Directory -Force \"$base\\\\config\" | Out-Null; New-Item -ItemType Directory -Force \"$base\\\\controller\" | Out-Null; Move-Item \"$base\\\\Cart.java\" \"$base\\\\model\\\\Cart.java\"; Move-Item \"$base\\\\CartItem.java\" \"$base\\\\model\\\\CartItem.java\"; Move-Item \"$base\\\\CartDataConfig.java\" \"$base\\\\config\\\\CartDataConfig.java\"; Move-Item \"$base\\\\CartController.java\" \"$base\\\\controller\\\\CartController.java\"; Get-ChildItem -Recurse $base | Select-Object FullName)",
+      "Bash(mvn compile *)",
+      "Bash(mvn clean *)"
+    ]
+  }
+}
