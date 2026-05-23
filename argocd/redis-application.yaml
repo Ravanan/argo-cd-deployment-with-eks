@@ -18,19 +18,24 @@ spec:
         values: |
           global:
             storageClass: ebs-gp3-csi
+            security:
+              allowInsecureImages: true
+          image:
+            repository: bitnamilegacy/redis
+            tag: 7.4.2-debian-12-r0
           auth:
             password: R@d1sP@$$w0rd
           master:
             persistence:
               enabled: true
               storageClass: ebs-gp3-csi
-              size: 8Gi
+              size: 4Gi
           replica:
             replicaCount: 2
             persistence:
               enabled: true
               storageClass: ebs-gp3-csi
-              size: 8Gi
+              size: 4Gi
   destination:
     server: https://9B993B8D3EFC45F9E25D4B662C01F759.gr7.ap-southeast-2.eks.amazonaws.com
     namespace: redis
