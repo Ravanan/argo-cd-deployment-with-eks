@@ -7,19 +7,30 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
-    repoURL: registry-1.docker.io/bitnamicharts
-    chart: redis
-    targetRevision: 20.6.2
-    helm:
-      values: |
-        auth:
-          password: R@d1sP@$$w0rd
-        master:
-          persistence:
-            size: 8Gi
-        replica:
-          replicaCount: 2
+  sources:
+    - repoURL: https://github.com/Ravanan/argo-cd-deployment-with-eks.git
+      targetRevision: feature/argocd-within-minikube
+      path: redis-extras
+    - repoURL: registry-1.docker.io/bitnamicharts
+      chart: redis
+      targetRevision: 20.6.2
+      helm:
+        values: |
+          global:
+            storageClass: ebs-gp3-csi
+          auth:
+            password: R@d1sP@$$w0rd
+          master:
+            persistence:
+              enabled: true
+              storageClass: ebs-gp3-csi
+              size: 8Gi
+          replica:
+            replicaCount: 2
+            persistence:
+              enabled: true
+              storageClass: ebs-gp3-csi
+              size: 8Gi
   destination:
     server: https://9B993B8D3EFC45F9E25D4B662C01F759.gr7.ap-southeast-2.eks.amazonaws.com
     namespace: redis
@@ -29,3 +40,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
