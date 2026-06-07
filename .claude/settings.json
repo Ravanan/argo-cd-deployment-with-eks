@@ -9,7 +9,12 @@
       "PowerShell(if \\(!\\(Test-Path \"k8s\\\\storage\"\\)\\) { New-Item -ItemType Directory -Path \"k8s\\\\storage\" | Out-Null }; Get-ChildItem k8s)",
       "PowerShell(New-Item -ItemType Directory -Path \"redis-extras\" -Force)",
       "Bash(kubectl apply *)",
-      "Bash(kubectl annotate *)"
+      "Bash(kubectl annotate *)",
+      "Bash(kubectl --context minikube get application redis -n argocd)",
+      "Bash(kubectl --context minikube get secret bitnami-oci -n argocd)",
+      "Bash(kubectl --context minikube get ns redis)",
+      "Bash(kubectl --context arn:aws:eks:ap-southeast-2:665206375138:cluster/thoughtful-pop-dinosaur get ns redis)",
+      "Bash(kubectl --context arn:aws:eks:ap-southeast-2:665206375138:cluster/thoughtful-pop-dinosaur get all,pvc,cm,secret -n redis)"
     ]
   }
 }
