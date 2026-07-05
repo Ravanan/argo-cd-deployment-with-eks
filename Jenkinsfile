@@ -30,7 +30,7 @@ pipeline {
         stage('Build & Test') {
             agent {
                 docker {
-                    image 'maven:3.9-eclipse-temurin-21'
+                    image 'maven:3.9-eclipse-temurin-25'
                     args  '-v jenkins-m2-cache:/root/.m2'
                     reuseNode true
                 }
